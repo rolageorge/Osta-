@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technician Dashboard • Osta+</title>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="technician.css" />
+  </head>
+  <body>
+    <div class="dashboard-shell">
+      <header class="top-bar">
+        <a class="back-link" href="index.html">
+          <span aria-hidden="true">←</span>
+          Back
+        </a>
+        <div class="title-block">
+          <div class="icon-pill">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M20.71 7.04a3 3 0 0 0-4.24 0l-.88.88-1.76-1.76.88-.88a3 3 0 0 0-4.24-4.24l-.88.88 2.12 2.12-8.59 8.59a3 3 0 0 0 0 4.24l1.41 1.41a3 3 0 0 0 4.24 0l8.59-8.59 2.12 2.12.88-.88a3 3 0 0 0 0-4.24Z"
+              />
+            </svg>
+          </div>
+          <div>
+            <h1>Technician Dashboard</h1>
+            <p>Welcome back, Alex Thompson</p>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="ghost">
+            <span>💬</span>
+            Messages
+          </button>
+          <button class="ghost">
+            <span>⚙️</span>
+            Settings
+          </button>
+          <div class="avatar" aria-label="Technician avatar">AT</div>
+        </div>
+      </header>
+
+      <section class="stats-grid">
+        <article>
+          <p>Today's Jobs</p>
+          <div class="stat-value" data-key="jobsToday">3</div>
+          <span class="stat-icon">📅</span>
+        </article>
+        <article>
+          <p>This Week</p>
+          <div class="stat-value" data-key="revenueWeek">$1,240</div>
+          <span class="stat-icon peach">💲</span>
+        </article>
+        <article>
+          <p>Avg Rating</p>
+          <div class="stat-value" data-key="avgRating">4.9</div>
+          <span class="stat-icon">⭐</span>
+        </article>
+        <article>
+          <p>Completed</p>
+          <div class="stat-value" data-key="completed">47</div>
+          <span class="stat-icon peach">✅</span>
+        </article>
+      </section>
+
+      <div class="tab-bar" role="tablist">
+        <button class="tab active" data-tab="schedule" role="tab" aria-selected="true">
+          Today's Schedule
+        </button>
+        <button class="tab" data-tab="history" role="tab" aria-selected="false">Job History</button>
+        <span class="spacer"></span>
+        <button class="tab ghost small" data-tab="profile" role="tab" aria-selected="false">
+          Profile &amp; Tools
+        </button>
+      </div>
+
+      <section class="main-layout">
+        <div class="schedule" id="scheduleList" aria-live="polite"></div>
+        <aside class="details-panel" id="jobDetails">
+          <h3>Job Details</h3>
+          <p class="details-time"></p>
+          <dl></dl>
+          <button class="primary">Update Status</button>
+        </aside>
+      </section>
+    </div>
+
+    <script src="technician.js"></script>
+  </body>
+</html>
